@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- Шапка сайта -->
-    <header class="main-header">
+    <header class="main-header" data-test="header">
       <nav class="navigation">
         <div class="navigation-with-logo">
           <img class="sedona-logo" src="images/logo-sedona.svg" width="140" height="70" alt="Логотип сайта Седоны.">
@@ -45,10 +45,10 @@
     </header>
 
 
-    <main class="main-container">
+    <main class="main-container" data-test="main">
       <div class="page-container">
         <h1 class="visually-hidden">SEDONA</h1>
-        <section class="welcome-block">
+        <section class="welcome-block" data-test="hero">
           <img class="text-logo" src="images/welcome.svg" width="458" height="352" alt="Крупный представительный текст.">
         </section>
         <section class="sedona-description">
@@ -57,7 +57,7 @@
             заслуживающий большего!</p>
           <p class="small-text">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
         </section>
-        <section class="advantages">
+        <section class="advantages" data-test="advantages">
           <h2 class="visually-hidden">Преимущества</h2>
           <ul class="advantages-list">
             <li class="advantages-item blue-1">
@@ -118,7 +118,7 @@
             </li>
           </ul>
         </section>
-        <section class="search-hotel-block">
+        <section class="search-hotel-block" data-test="search">
           <h2 class="visually-hidden">Привлечение к целевому действию</h2>
           <p class="big-text">Заинтересовались?</p>
           <div class="small-text-grid">
@@ -126,7 +126,7 @@
           </div>
           <a class="button search-hotels" href="#">Поиск гостиницы в седоне</a>
         </section>
-        <section class="subscribe-block subscribe-block-background">
+        <section class="subscribe-block subscribe-block-background" data-test="subscribe">
           <h2 class="visually-hidden">Подписаться на рассылку</h2>
           <div class="subscribe-block-text">
             <p class="big-text">Подпишитесь на рассылку</p>
@@ -141,7 +141,7 @@
     </main>
 
 
-    <footer class="page-footer">
+    <footer class="page-footer" data-test="footer">
       <div class="page-footer-container">
         <ul class="footer-social-list">
           <li>
@@ -191,5 +191,75 @@
         </a>
       </div>
     </footer>
+    <div class="modal-container modal-container-close">
+      <div class="modal modal-search-hotel">
+        <button class="modal-close-button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <section class="modal-content">
+          <h2 class="big-text modal-content-title">Поиск гостиницы в Седоне</h2>
+          <form class="search-hotel-form" action="https://echo.htmlacademy.ru/" method="post">
+            <p class="field-group">
+              <label class="input-title" for="date-arrival">Дата Заезда:</label>
+              <input class="search-hotel-field field" type="text" id="date-arrival" name="date-arrival" value="27 апреля 2020">
+              <label class="field-icon" for="date-arrival"></label>
+              <label class="input-message mistake-message" for="date-arrival">Мы не можем отправить вас в прошлое.</label>
+            </p>
+            <p class="field-group">
+              <label class="input-title" for="date-departure">Дата Выезда:</label>
+              <input class="search-hotel-field field" type="text" id="date-departure" name="date-departure" value="1 сентября 2023">
+              <label class="field-icon" for="date-departure"></label>
+              <label class="input-message" for="date-departure">На эти даты есть свободные номера. Пока есть.</label>
+            </p>
+            <div class="field-group-count">
+              <div class="input-count">
+                <label class="input-title" for="adult-count">Взрослые:</label>
+                <div class="counter">
+                  <button class="counter-button minus">
+                    <svg class="counter-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 9V11H17V9H3Z"/>
+                    </svg>
+                  </button>
+                  <input class="people-count" type="text" id="adult-count" name="adult-count" value="2">
+                  <button class="counter-button plus">
+                    <svg class="counter-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="input-count">
+                <span class="input-count-children">
+                  <label class="input-title" for="children-count">Дети:</label>
+                  <span class="tooltip">
+                    <button class="tooltip-toggle" type="button">
+                      <svg class="tooltip-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="13" cy="13" r="13" fill="#83B3D3"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
+                      </svg>
+                    </button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-label-child-count">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                  </span>
+                </span>
+                <div class="counter">
+                  <button class="counter-button minus">
+                    <svg class="counter-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 9V11H17V9H3Z"/>
+                    </svg>
+                  </button>
+                  <input class="people-count" type="text" id="children-count" name="children-count" value="2">
+                  <button class="counter-button plus">
+                    <svg class="counter-icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button class="button modal-search-button" type="submit">Найти</button>
+          </form>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
